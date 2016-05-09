@@ -1,0 +1,23 @@
+{
+  "extends": "eslint",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "func-style": [
+      0,
+      "declaration"
+    ],
+    "new-cap": [
+      0
+    ],    
+    "quotes": [
+      2,
+      "single",
+      "avoid-escape"
+    ]
+  },
+  "globals": {
+    "d3": false
+  }
+}

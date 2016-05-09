@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    height: 100%;
+}
+
+svg {
+    border: 1px solid #fff;
+}
+
+.wrapper {
+    width: 600px;
+    height: 400px;
+    margin: 100px auto;
+}
+
+.bar {
+    fill: #6A0C7A;
+    cursor: pointer;
+}
+
+.bar:hover {
+    fill: #B285B5;
+}
+
+.axis text {
+    fill: #5087b0;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}

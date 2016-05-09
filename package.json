@@ -1,0 +1,17 @@
+{
+    "name": "lets-make-a-bar-chart",
+    "version": "0.0.1",
+    "scripts": {
+        "lint": "eslint --fix --color ./src || true",
+        "start": "watch -p 'src/**/*' -c 'npm run lint -s' & npm run browsersync ",
+        "browsersync": "node browser-sync"
+    },
+    "devDependencies": {
+        "browser-sync": "2.12.5",
+        "eslint": "2.9.0",
+        "eslint-config-eslint": "3.0.0",
+        "proxy-middleware": "0.15.0",
+        "url": "0.11.0",
+        "watch-cli": "0.2.1"
+    }
+}
