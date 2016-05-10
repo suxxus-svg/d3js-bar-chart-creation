@@ -14,7 +14,7 @@ bs.init({
         baseDir: './src',
         middleware: [proxy(proxy_options('http://localhost:4000/api'))]
     },
-    port: 3000,
+    port: 3500,
     ui: {
         port: 3012
     },
