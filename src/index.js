@@ -1,5 +1,5 @@
 'use strict';
-(function(data) {
+(function(data, d3) {
 
     var mapProp = function(d, prop) {
         return d.map(function(item) {
@@ -39,9 +39,20 @@
 
         var container = d3.select(values.container);
 
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+                var val1 = d[values.dataKeys[0]];
+                var val2 = d[values.dataKeys[1]];
+                return '<strong>' + val1 + " </strong> <span style='color:red'>" + val2 + '</span>';
+            });
+
         var svg = container.append('svg')
             .attr('width', values.outerWidth)
             .attr('height', values.outerHeigth);
+
+        svg.call(tip);
 
         var barsContainer = svg.append('g')
             .attr('class', 'chart')
@@ -55,7 +66,9 @@
                 return 'translate(' + values.getX(d[key]) + ',0)';
             })
             .attr('class', 'bar')
-            .on('click', values.clickHandler);
+            .on('click', values.clickHandler)
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
 
         bar.append('rect')
             .attr('y', function(d) {
@@ -134,4 +147,4 @@
     { label: 'C', value: 15 },
     { label: 'G', value: 22 }
 
-]));
+], window.d3));
